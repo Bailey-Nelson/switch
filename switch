@@ -20,7 +20,7 @@ function switchToRepo {
   # clone repo if it doesn't exist locally
   [ ! -d $DIR ] && git clone $BASE_URL:$ORG_NAME/$1.git $DIR
   # change to local repo directory if clone was successful or already exists
-  echo "switching to \"$1\""
+  echo "switching to '$1'"
   [[ -d $DIR ]] && cd $DIR
 }
 
@@ -57,7 +57,7 @@ function setOrg {
 
 # return lower case of input
 function toLower {
-  lower=$(echo $1 | tr '[:upper:]' '[:lower:]')
+  local lower=$(echo $1 | tr '[:upper:]' '[:lower:]')
   echo $lower
 }
 
